@@ -1,0 +1,218 @@
+.koverlay, .koverlaybox, .koverlay.visible, .koverlaybox.visible {
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+}
+
+.koverlay {
+	opacity: 0;
+	-moz-opacity: 0;
+	-webkit-opacity: 0;
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.7);
+	z-index:9000;
+	overflow: hidden;
+}
+
+.koverlay.visible {
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	-webkit-opacity: 0.7;
+}
+
+.koverlay .loader {
+	position: absolute;
+	top:50%;
+	left:50%;
+	color:white;
+	font-size:40px;
+	margin-left:-20px;
+	margin-top:-20px;
+}
+
+.koverlay .hiddencontent {
+	visibility: hidden;
+	float:left;
+}
+
+.koverlaybox {	
+	z-index:9000;
+	opacity: 0;
+	-moz-opacity: 0;
+	-webkit-opacity: 0;
+	width:0;
+	height:0;
+	position: absolute;
+	left:50%;
+	margin-left:0;
+	background:white;
+	transform: scale(0);
+	-webkit-transform: scale(0);
+}
+
+.koverlaybox.visible {	
+	opacity: 1;
+	-moz-opacity: 1;
+	-webkit-opacity: 1;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+}
+
+.koverlaybox .koverlaybox_inner {
+	height:100%;
+}
+
+.koverlaybox .koverclose {
+	position: absolute;
+	right:-15px;
+	top:-15px;
+	color:#444;
+	cursor:pointer;
+	background:white;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	width:30px;
+	height:30px;
+	line-height:28px;
+	text-align: center;
+	font-size:23px;
+}
+
+.koverlaybox .koverclose:after {
+	content:"\f00d";
+	font-family: "FontAwesome";
+}
+
+.koverlaycontent {	
+	padding:10px;
+	min-width:300px;
+	color:black;
+}
+
+.koverlaycontent .kbuttons {
+	margin-top:20px;
+	text-align: center;
+}
+
+.koverlaycontent .kbuttons .kbutton {
+	display: inline-block;
+	font-size:15px;
+	width:40%;
+	margin:0 2%;
+	background:#ECECEC;
+	color:#444;
+	text-align: center;
+	padding:7px 15px;
+	cursor: pointer;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-wekbit-border-radius: 20px;
+}
+
+.koverlaycontent .kbuttons .kbutton.kvalid {
+	background:#F08D00;
+	color:white;
+}
+
+.koverlaycontent .kbuttons .kbutton.kvalid:hover {
+	background:#CE870A;
+}
+
+.koverlaycontent .kbuttons .kbutton.kcancel:before {
+	/* fontawesome */
+	content:"\f00d ";
+	font-family: "FontAwesome";
+	display: inline-block;
+	margin-right: 10px;
+	font-size:1.2em;
+}
+
+.koverlaycontent .kbuttons .kbutton.kvalid:before {
+	/* fontawesome */
+	content:"\f00c ";
+	font-family: "FontAwesome";
+	display: inline-block;
+	margin-right: 10px;
+	font-size:1.2em;
+}
+
+.koverlayimg img {
+	max-width: 100%;
+	display: block;
+}
+
+.koverlayimg .koverlayimg_legend {
+	position: absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	padding:3px 10px;
+	color:white;
+	background:black;
+	background:rgba(0,0,0,0.8);
+}
+
+/* gallery */
+.koverlaybox.kovergallery .gallery_prev, .koverlaybox.kovergallery .gallery_next {
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+}
+.koverlaybox.kovergallery .gallery_next {
+	position: absolute;
+	top:50%;
+	right:10px;
+	margin-top:-30px;
+	cursor:pointer;
+	opacity: 0;
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+}
+.koverlaybox.kovergallery:hover .gallery_next {
+	right:20px;
+	opacity: 1;
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+}
+.koverlaybox.kovergallery .gallery_next:after {
+	font-family: "FontAwesome";
+	content: "\f105";
+	font-size: 60px;
+}
+.koverlaybox.kovergallery .gallery_prev {
+	position: absolute;
+	top:50%;
+	left:10px;
+	margin-top:-30px;
+	cursor:pointer;
+	opacity: 0;
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+}
+.koverlaybox.kovergallery:hover .gallery_prev {
+	left:20px;
+	opacity: 1;
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+}
+.koverlaybox.kovergallery .gallery_prev:after {
+	font-family: "FontAwesome";
+	content: "\f104";
+	font-size: 60px;
+}
+.koverlaybox.kovergallery .gallery_next.hidden {
+	display: none;
+}
+.koverlaybox.kovergallery .gallery_prev.hidden {
+	display: none;
+}
+.koverlaybox.kovergallery .gallery_div_tmp {
+	display: block;
+	width:100px;
+	height:100px;
+}
